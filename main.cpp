@@ -107,7 +107,7 @@ bool right(int uper[4][4]){
 void bmpout(){
     for(int j=0;j<4;j++){
         for(int i=0;i<4;i++){
-            if(bmp[i][j]==0){cout<<"*"<<" ";continue;}cout<<bmp[i][j]<<" ";
+            if(bmp[i][j]==0){cout<<"*"<<"\t";continue;}cout<<bmp[i][j]<<"\t";
         } cout<<"\n";
     }
     cout<<"\n";
