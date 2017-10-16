@@ -152,29 +152,34 @@ int main() {char com=' ';
     init();
     int vbmp[4][4];
     initmas(vbmp);
-   
+    bool norm=true;
     while(com!='q'){
-
+      
         switch(com){
             case 'j':
               down(bmp);
+              norm=true;
                 break;
             case 'k':
                 up(bmp);
+                norm=true;
                 break;
             case 'h':
                 left(bmp);
+                norm=true;
                 break;
             case 'l':
                 right(bmp);
+                norm=true;
                 break;
 
-        }
+        }if(norm){
         update(vbmp);
         generate();
         bmpout();
-        gameOver(vbmp);
+        gameOver(vbmp);}
         cin>>com;
+        norm=false;
         
     }
     return 0;
