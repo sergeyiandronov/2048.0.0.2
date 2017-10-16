@@ -35,13 +35,13 @@ int ran2(int p){
 void init(){
     initmas(bmp);
     srand(time(NULL));
-    bmp[1][0]=ran2(4);
-    bmp[1][1]=ran2(4);
-    bmp[1][2]=ran2(4);
-    bmp[1][3]=ran2(4);
-    bmp[2][3]=ran2(4);
-    bmp[0][3]=ran2(4);
-    bmp[2][2]=ran2(4);
+   bmp[1][0]=ran2(5);
+    bmp[1][1]=ran2(5);
+    bmp[1][2]=ran2(5);
+    bmp[1][3]=ran2(5);
+    bmp[2][3]=ran2(5);
+    bmp[0][3]=ran2(5);
+    bmp[2][2]=ran2(5);
 }
 bool  up(int uper[4][4]){
     bool any=false;
@@ -112,9 +112,28 @@ void bmpout(){
     }
     cout<<"\n";
 }
+
+void update(int fbmp[4][4]){
+      for(int j=0;j<4;j++){
+        for(int i=0;i<4;i++){
+        	fbmp[j][i]=bmp[j][i];
+        }}
+}
+void gameOver(int fbmp[4][4]){
+      if(!up(fbmp)){ update(fbmp);
+      	if(!down(fbmp)){ update(fbmp);
+      		if(!left(fbmp)){ update(fbmp);
+      			if(!right(fbmp)){
+      				cout<<"\n game over"; exit(0);
+      			}
+      		}
+      	}
+      }	
+}
 int main() {char com=' ';
     init();
-    
+    int vbmp[4][4];
+    initmas(vbmp);
     while(com!='q'){
 
         switch(com){
@@ -132,8 +151,12 @@ int main() {char com=' ';
                 break;
 
         }
+        update(vbmp);
+        
         bmpout();
+        gameOver(vbmp);
         cin>>com;
+        
     }
     return 0;
 }
