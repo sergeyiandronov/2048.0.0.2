@@ -148,7 +148,7 @@ if ((99<t)&&(t<=9090909000)){
 }else if(t==0){}
 }
 int main() {char com=' ';
-cout<<rand()<<"\n";
+
     init();
     int vbmp[4][4];
     initmas(vbmp);
@@ -156,16 +156,16 @@ cout<<rand()<<"\n";
 
         switch(com){
             case 'j':
-              cout << down(bmp)<<"\n";
+              down(bmp);
                 break;
             case 'k':
-                cout<<up(bmp)<<"\n";
+                up(bmp);
                 break;
             case 'h':
-                cout<<left(bmp)<<"\n";
+                left(bmp);
                 break;
             case 'l':
-                cout<<right(bmp)<<"\n";
+                right(bmp);
                 break;
 
         }
