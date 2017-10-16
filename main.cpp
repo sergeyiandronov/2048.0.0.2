@@ -154,28 +154,28 @@ int main() {char com=' ';
     initmas(vbmp);
     bool norm=true;
     while(com!='q'){
-      
+       bool dobav=false;
         switch(com){
             case 'j':
-              down(bmp);
+              dobav=down(bmp);
               norm=true;
                 break;
             case 'k':
-                up(bmp);
+                dobav=up(bmp);
                 norm=true;
                 break;
             case 'h':
-                left(bmp);
+                dobav=left(bmp);
                 norm=true;
                 break;
             case 'l':
-                right(bmp);
+                dobav=right(bmp);
                 norm=true;
                 break;
 
         }if(norm){
-        update(vbmp);
-        generate();
+        update(vbmp);if(dobav){
+        generate();}
         bmpout();
         gameOver(vbmp);}
         cin>>com;
