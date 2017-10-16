@@ -133,25 +133,26 @@ void gameOver(int fbmp[4][4]){
 void generate(){
 	int n=0;
 	int y[16][2];
-
+bool need=false;
 srand(time(NULL));
 long int t=rand();
   for(int i=0;i<4;i++){for(int j=0;j<4;j++){if(bmp[i][j]==0){y[n][0]=i;y[n][1]=j;
-  	n++;
-  }}}
+  	n++;need=true;
+  }}}if(need){
   int h=rand()%n;
   
 if ((99<t)&&(t<=9090909000)){
 	bmp[y[h][0]][y[h][1]]=2;
 }else if (t>9090909000){
 	bmp[y[h][0]][y[h][1]]=4;
-}else if(t==0){}
+}else if(t==0){}}
 }
 int main() {char com=' ';
 
     init();
     int vbmp[4][4];
     initmas(vbmp);
+   
     while(com!='q'){
 
         switch(com){
