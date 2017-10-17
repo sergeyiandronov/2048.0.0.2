@@ -142,6 +142,7 @@ long int t=rand();
   	n++;need=true;
   }}}if(need){
   int h=rand()%n;
+  t=rand()%10000000000;
   
 if ((0<t)&&(t<=9090909090)){
 	bmp[y[h][0]][y[h][1]]=2;
