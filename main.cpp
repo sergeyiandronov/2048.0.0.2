@@ -126,7 +126,7 @@ void gameOver(int fbmp[4][4]){
       	if(!down(fbmp)){ update(fbmp);
       		if(!left(fbmp)){ update(fbmp);
       			if(!right(fbmp)){
-      				cout<<"\n game over \n your score: "<<score; exit(0);
+      				cout<<"\n game over"; exit(0);
       			}
       		}
       	}
@@ -179,12 +179,13 @@ int main() {char com=' ';
         update(vbmp);if(dobav){
         generate();}
         bmpout();
+	cout<<"score: "<<score<<"\n";
         gameOver(vbmp);}
         cin>>com;
         
         norm=false;
         
     }
- cout<<"your score: "<<score;
+ 
     return 0;
 }
